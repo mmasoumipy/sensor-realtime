@@ -32,10 +32,10 @@ db.commit()
 
 
 while True:
-    sensor_id = random.randint(1, 10) 
-    temperature = round(random.uniform(15.0, 30.0), 2) 
+    sensor_id = random.randint(1, 10)
+    temperature = round(random.uniform(-40.0, 50.0), 2) 
     humidity = round(random.uniform(30.0, 70.0), 2)
-    pressure = round(random.uniform(950.0, 1050.0), 2)
+    pressure = round(random.uniform(500.0, 1100.0), 2)
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
 
     query = """

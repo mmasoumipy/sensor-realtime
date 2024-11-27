@@ -8,7 +8,7 @@ from streamlit_autorefresh import st_autorefresh
 
 
 # Set page configuration -- auto refresh every 5 seconds
-count = st_autorefresh(interval=5000)
+count = st_autorefresh(interval=10000)
 
 # Load environment variables
 load_dotenv()
@@ -48,8 +48,10 @@ def calculate_aggregations(data):
 # Detect anomalies -- temperature > 40 or pressure < 950
 def detect_anomalies(data):
     anomalies = data[
-        (data["temperature"] > 40) | 
-        (data["pressure"] < 950)
+        (data["temperature"] > 30) | 
+        (data["temperature"] < -20) |
+        (data["pressure"] < 950) |
+        (data["pressure"] > 1050)
     ]
     return anomalies
 
