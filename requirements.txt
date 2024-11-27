@@ -1,0 +1,6 @@
+pandas==2.2.3
+pymysql==1.1.1
+python-dotenv==1.0.1
+SQLAlchemy==2.0.25
+streamlit==1.30.0
+streamlit_autorefresh==1.0.1
