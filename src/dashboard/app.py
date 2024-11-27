@@ -1,8 +1,14 @@
-import streamlit as st
-import pandas as pd
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
 import os
+
+import pandas as pd
+import streamlit as st
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from streamlit_autorefresh import st_autorefresh
+
+
+# Set page configuration -- auto refresh every 5 seconds
+count = st_autorefresh(interval=5000)
 
 # Load environment variables
 load_dotenv()
@@ -12,7 +18,7 @@ engine = create_engine(
     f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
 )
 
-# Fetch data from the database
+# Fetch data from the database -- latest 100 records
 def fetch_data():
     query = "SELECT * FROM sensor_readings ORDER BY timestamp DESC LIMIT 100"
     data = pd.read_sql(query, engine)
