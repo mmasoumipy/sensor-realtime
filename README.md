@@ -1,4 +1,4 @@
-# Sensor Realtime Streaming Dashboard
+# Sensor Realtime Streaming Dashboard 🌡️📊
 
 This project is a **real-time streaming dashboard** for monitoring and analyzing sensor data, implemented using **Python**, **Streamlit**, and **MySQL**. The system includes components for data generation, processing, and visualization, offering insights like statistical aggregations, anomaly detection, and trend visualization.
 
